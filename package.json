@@ -13,7 +13,7 @@
         "gyronorm": "^2.0.4",
         "howler": "^2.1.1",
         "jquery": "^3.4.0",
-        "reveal.js": "^3.8.0",
+        "reveal.js": "^4.3.0",
         "reveal.js-menu": "^1.2.0"
     },
     "resolutions": {
