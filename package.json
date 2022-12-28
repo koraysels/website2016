@@ -5,10 +5,10 @@
     "main": "Gulpfile.js",
     "private": true,
     "dependencies": {
+        "@hughsk/fulltilt": "^0.7.1",
         "Devices.css": "github:marvelapp/devices.css",
         "evently": "^2.3.1",
         "favico.js": "^0.3.10",
-        "fulltilt": "github:adtile/Full-Tilt",
         "gsap": "^1.20.6",
         "gulp": "^4.0.2",
         "gyronorm": "^2.0.4",

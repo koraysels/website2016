@@ -8,10 +8,10 @@
             "name": "undefined-website-2016",
             "version": "0.0.1",
             "dependencies": {
+                "@hughsk/fulltilt": "^0.7.1",
                 "Devices.css": "github:marvelapp/devices.css",
                 "evently": "^2.3.1",
                 "favico.js": "^0.3.10",
-                "fulltilt": "github:adtile/Full-Tilt",
                 "gsap": "^1.20.6",
                 "gulp": "^4.0.2",
                 "gyronorm": "^2.0.4",
@@ -112,6 +112,11 @@
             "engines": {
                 "node": ">=0.10.0"
             }
+        },
+        "node_modules/@hughsk/fulltilt": {
+            "version": "0.7.1",
+            "resolved": "https://registry.npmjs.org/@hughsk/fulltilt/-/fulltilt-0.7.1.tgz",
+            "integrity": "sha512-jlPeVCl+oSh+2gS701ktbUa+jlBFxtL3GvA+WfyfgpyPAT0XL//F9Ton9QQFIJPdmWVwZTjS0phPEL5iziVM1A=="
         },
         "node_modules/@sindresorhus/is": {
             "version": "0.7.0",
@@ -6153,10 +6158,6 @@
             "engines": {
                 "node": ">=0.6"
             }
-        },
-        "node_modules/fulltilt": {
-            "version": "0.7.0",
-            "resolved": "git+ssh://git@github.com/adtile/Full-Tilt.git#22a1007af229153e5b897afd1fc903d7d91fe481"
         },
         "node_modules/function-bind": {
             "version": "1.1.1",
@@ -18455,6 +18456,11 @@
                 }
             }
         },
+        "@hughsk/fulltilt": {
+            "version": "0.7.1",
+            "resolved": "https://registry.npmjs.org/@hughsk/fulltilt/-/fulltilt-0.7.1.tgz",
+            "integrity": "sha512-jlPeVCl+oSh+2gS701ktbUa+jlBFxtL3GvA+WfyfgpyPAT0XL//F9Ton9QQFIJPdmWVwZTjS0phPEL5iziVM1A=="
+        },
         "@sindresorhus/is": {
             "version": "0.7.0",
             "resolved": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.7.0.tgz",
@@ -23585,10 +23591,6 @@
                 "mkdirp": ">=0.5 0",
                 "rimraf": "2"
             }
-        },
-        "fulltilt": {
-            "version": "git+ssh://git@github.com/adtile/Full-Tilt.git#22a1007af229153e5b897afd1fc903d7d91fe481",
-            "from": "fulltilt@github:adtile/Full-Tilt"
         },
         "function-bind": {
             "version": "1.1.1",

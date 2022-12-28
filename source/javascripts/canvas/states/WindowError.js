@@ -1,6 +1,6 @@
 import '../../helpers/events';
 import CustomState from "./CustomState";
-require('fulltilt/dist/fulltilt.js');
+require('@hughsk/fulltilt/dist/fulltilt.min.js');
 import GyroNorm from 'gyronorm';
 
 class MouseTrail1 extends CustomState {
