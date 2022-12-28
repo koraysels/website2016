@@ -14,7 +14,7 @@ var pngquant = require("imagemin-pngquant");
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
 var buffer = require('gulp-buffer');
-var sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var minify = require('gulp-minify');
@@ -46,6 +46,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task("html", function () {
+    console.log('html task running')
     return gulp.src([PATHS.html + 'start.html', PATHS.slides, PATHS.html + 'end.html'])
         .pipe(concat('index.html'))
         .pipe(gulp.dest(PATHS.dist))
@@ -111,6 +112,19 @@ gulp.task("images", function () {
         .pipe(gulp.dest(PATHS.assets + 'images'))
 });
 
+
+gulp.task('watch', function () {
+    gulp.watch('app/css/*.css', gulp.series('styles'));
+    gulp.watch('app/js/*.js', gulp.series('scripts'));
+    gulp.watch('app/img/*', gulp.series('images'));
+});
+
+gulp.task('watch-js', gulp.series('js'), browserSync.reload);
+gulp.task('watch-sass', gulp.series('sass'), browserSync.reload);
+gulp.task('watch-html', gulp.series('html'), browserSync.reload);
+gulp.task('watch-images', gulp.series('images'), browserSync.reload);
+gulp.task('watch-fonts', gulp.series('fonts'), browserSync.reload);
+
 gulp.task("connect", function () {
     var options = {
         server: {
@@ -122,18 +136,15 @@ gulp.task("connect", function () {
 
     browserSync(options);
 
-    gulp.watch(PATHS.js, ["watch-js"]);
-    gulp.watch(PATHS.scss, ["watch-sass"]);
-    gulp.watch(PATHS.html + "**/*", ["watch-html"]);
-    gulp.watch(PATHS.images + "**/*", ["watch-images"]);
-    gulp.watch(PATHS.fonts + "**/*", ["watch-fonts"]);
+    gulp.task('watch', function () {
+        gulp.watch(PATHS.scss, gulp.series('watch-sass'));
+        gulp.watch(PATHS.js, gulp.series('watch-js'));
+        gulp.watch(PATHS.html + "**/*", gulp.series('watch-html'));
+        gulp.watch(PATHS.images + "**/*", gulp.series('watch-images'));
+        gulp.watch(PATHS.fonts + "**/*", gulp.series('watch-fonts'));
+    });
 });
 
-gulp.task('watch-js', ['js'], browserSync.reload);
-gulp.task('watch-sass', ['sass'], browserSync.reload);
-gulp.task('watch-html', ['html'], browserSync.reload);
-gulp.task('watch-images', ['images'], browserSync.reload);
-gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
-gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["sass", "js", "images", "html", "lib"]);
+gulp.task("build", gulp.series("sass", "js", "images", "html", "lib"));
+gulp.task("default", gulp.series("build", "connect"));

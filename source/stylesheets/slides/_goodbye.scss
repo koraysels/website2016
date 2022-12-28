@@ -1,0 +1,15 @@
+.goodbye {
+    font-size: 13px;
+    font-family: "Bagnard", sans-serif;
+
+    p {
+        margin: 1rem auto;
+    }
+
+    @media (min-width: 71.25em) {
+        .reveal .content-center {
+            max-width: 760px;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
