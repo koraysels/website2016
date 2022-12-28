@@ -1,14 +1,24 @@
 .goodbye {
     font-size: 13px;
-    font-family: "Bagnard", sans-serif;
+    font-family: "Space Mono", sans-serif;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
 
     p {
         margin: 1rem auto;
     }
 
+    .content-center {
+        margin-top: 1.5rem;
+        height: 100%;
+        margin-bottom: 1.5rem;
+    }
+
     @media (min-width: 71.25em) {
-        .reveal .content-center {
-            max-width: 760px;
+        .content-center {
+            max-width: 800px;
             -webkit-overflow-scrolling: touch;
         }
     }
